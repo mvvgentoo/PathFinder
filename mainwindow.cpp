@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "ui_astartcellwidget.h"
 #include "astarcellwidget.h"
 #include <qcombobox.h>
 
@@ -40,7 +39,8 @@ MainWindow::MainWindow(QWidget *parent) :
       a->SetHeurisiticValue(j*100);
       a->SetColor(QColor(i * 50 % 255, ((i+j) * 55) % 255, ((i * j) * 30) % 255 ));
       a->resize(cellSize, cellSize);
-      a->SetArrowValue(0);
+
+      a->SetParentDirection(static_cast<ToParentDirection>(std::rand()%static_cast<int>(ToParentDirection::COUNT)));
 
       a->setAutoFillBackground(true);
       ui->tableWidget->setCellWidget(i, j, a);

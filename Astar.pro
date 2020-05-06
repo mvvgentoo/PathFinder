@@ -24,9 +24,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    datamodel.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    datamodel.h
 
 FORMS    += mainwindow.ui\
             astarcellwidget.ui
